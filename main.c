@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/12/09 03:05:18 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/12/09 14:14:14 by cfeijoo          ###   ########.fr       */
+/*   Created: 2013/12/09 03:07:13 by cfeijoo           #+#    #+#             */
+/*   Updated: 2013/12/09 14:13:13 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINTF_H
-# define PRINTF_H
-# include <libft.h>
-# include <stdarg.h>
+#include "ft_printf.h"
+#include <stdio.h>
 
-int	ft_printf(const char *format, ...);
+int	main(void)
+{
+	ft_putendl("Beginning Test\n");
 
-#endif
+	printf("%s", "HELLO WORLD\n");
+	ft_printf("%s", "HELLO WORLD\n");
+	return (0);
+}

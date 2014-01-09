@@ -6,7 +6,7 @@
 #    By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/12/03 17:38:57 by cfeijoo           #+#    #+#              #
-#    Updated: 2013/12/09 03:02:24 by cfeijoo          ###   ########.fr        #
+#    Updated: 2013/12/10 11:30:52 by cfeijoo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,9 +27,17 @@ CFLAGS = -g -Wall -Wextra -Werror
 CC = gcc
 
 $(NAME):
+	@echo "\n**** COMPILING $(NAME)\n"
 	$(CC) $(CFLAGS) -I $(INCFOLDER) -c $(SRC)
 
+updatelib:
+	@echo "\n**** UPDATING LIB\n"
+	cd $(LIBFOLDER)	\
+	&& git pull
+	make -C $(LIBFOLDER) re
+
 test: $(NAME)
+	@echo "\n**** COMPILING TEST\n"
 	$(CC) -c -I $(INCFOLDER) $(TESTFILE) $(CFLAGS)
 	$(CC) -o $(TESTNAME) -L$(LIBFOLDER) -l$(LIBNAME) $(OTESTFILE) $(OSRC)
 
